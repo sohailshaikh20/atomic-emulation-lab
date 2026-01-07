@@ -1,0 +1,6 @@
+<!-- Minimal Sysmon config placeholder (include ProcessCreate events). -->
+<Sysmon schemaversion="4.90">
+  <EventFiltering>
+    <ProcessCreate onmatch="include" />
+  </EventFiltering>
+</Sysmon>
