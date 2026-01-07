@@ -1,0 +1,6 @@
+playbook_id: RT-ATOMIC-T1083
+name: "T1083 — File and Directory Discovery"
+technique_id: T1083
+test_numbers: "1"
+description: "Enumerates directories to generate file discovery telemetry."
+recommended_for_demo: true

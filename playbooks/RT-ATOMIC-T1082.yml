@@ -1,0 +1,6 @@
+playbook_id: RT-ATOMIC-T1082
+name: "T1082 — System Information Discovery"
+technique_id: T1082
+test_numbers: "1"
+description: "Runs systeminfo/wmic-style discovery to generate host discovery telemetry."
+recommended_for_demo: true

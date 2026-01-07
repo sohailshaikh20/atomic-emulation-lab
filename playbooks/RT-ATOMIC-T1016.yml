@@ -1,0 +1,14 @@
+playbook_id: RT-ATOMIC-T1016
+name: "T1016 — System Network Configuration Discovery"
+technique_id: T1016
+test_numbers: "1"
+description: "Runs built-in Windows network discovery commands (ipconfig, route, netstat) to generate defender telemetry."
+recommended_for_demo: true
+expected_telemetry:
+  - "Sysmon Event ID 1: Process Create for ipconfig/netstat/route (Image + CommandLine + Hashes)"
+  - "Security 4688: Process Creation (if enabled)"
+evidence_outputs:
+  - meta.json
+  - atomic_output.log
+  - sysmon.evtx
+  - detection_summary.json

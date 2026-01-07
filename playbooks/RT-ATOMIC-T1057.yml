@@ -1,0 +1,6 @@
+playbook_id: RT-ATOMIC-T1057
+name: "T1057 — Process Discovery"
+technique_id: T1057
+test_numbers: "1"
+description: "Lists running processes (tasklist/Get-Process) to generate process discovery telemetry."
+recommended_for_demo: true

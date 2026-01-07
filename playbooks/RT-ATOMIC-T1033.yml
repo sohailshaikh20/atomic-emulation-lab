@@ -1,0 +1,6 @@
+playbook_id: RT-ATOMIC-T1033
+name: "T1033 — System Owner/User Discovery"
+technique_id: T1033
+test_numbers: "1"
+description: "Runs whoami/query user style commands to generate user discovery telemetry."
+recommended_for_demo: true
