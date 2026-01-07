@@ -18,38 +18,52 @@ This repo turns one-off atomic tests into **measurable detection benchmarks** wi
 
 
 flowchart LR
-  %% Styles
-  classDef control fill:#eef3ff,stroke:#4c6ef5,stroke-width:1px;
-  classDef data fill:#f8f9fa,stroke:#adb5bd,stroke-width:1px;
-  classDef output fill:#e6fcf5,stroke:#12b886,stroke-width:1px;
 
-  %% Control Plane
-  subgraph Control["Control Plane"]
-    A[Playbook Command]
-    B[Atomic Red Team Test]
-  end
+%% =====================
+%% Styles
+%% =====================
+classDef control fill:#eef3ff,stroke:#4c6ef5,stroke-width:1px
+classDef data fill:#f8f9fa,stroke:#adb5bd,stroke-width:1px
+classDef output fill:#e6fcf5,stroke:#12b886,stroke-width:1px
 
-  %% Telemetry & Evidence
-  subgraph Evidence["Telemetry and Evidence"]
-    C["Telemetry (Sysmon + Windows Logs)"]
-    D[Evidence Collector]
-    E["Evidence Folder (RUN_ID)"]
-  end
+%% =====================
+%% Control Plane
+%% =====================
+subgraph Control["Control Plane"]
+  A[Playbook Command]
+  B[Atomic Red Team Test]
+end
 
-  %% Analysis & Output
-  subgraph Analysis["Analysis and Reporting"]
-    F[Local Analyzer]
-    G["detection_summary.json"]
-    H["SIEM / EDR Correlation (Optional)"]
-  end
+%% =====================
+%% Telemetry & Evidence
+%% =====================
+subgraph Evidence["Telemetry and Evidence"]
+  C["Telemetry (Sysmon + Windows Logs)"]
+  D[Evidence Collector]
+  E["Evidence Folder (RUN_ID)"]
+end
 
-  %% Flow
-  A --> B --> C --> D --> E --> F --> G --> H
+%% =====================
+%% Analysis & Output
+%% =====================
+subgraph Analysis["Analysis and Reporting"]
+  F[Local Analyzer]
+  G["detection_summary.json"]
+  H["SIEM / EDR Correlation (Optional)"]
+end
 
-  %% Styling
-  class A,B control
-  class C,D,E data
-  class F,G,H output
+%% =====================
+%% Flow
+%% =====================
+A --> B --> C --> D --> E --> F --> G --> H
+
+%% =====================
+%% Styling
+%% =====================
+class A,B control
+class C,D,E data
+class F,G,H output
+
 ---
 
 ## Architecture (high-level)
