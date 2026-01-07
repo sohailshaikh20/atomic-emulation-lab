@@ -17,6 +17,23 @@ This repo turns one-off atomic tests into **measurable detection benchmarks** wi
 ---
 
 ## Architecture (high-level)
+
+flowchart LR
+  A[Playbook Command] --> B[Atomic Red Team Test]
+  B --> C[Telemetry: Sysmon + Windows Logs]
+  C --> D[Evidence Collector]
+  D --> E[Evidence Folder (RUN_ID)]
+  E --> F[Local Analyzer]
+  F --> G[detection_summary.json]
+  G --> H[Optional: SIEM/EDR Correlation]
+
+
+---
+
+
+---
+
+## Architecture (high-level)
 ```mermaid
 flowchart LR
   A[Playbook Command] --> B[Atomic Red Team Test]
